@@ -7,30 +7,30 @@ struct SinhVien {
 	bool gioitinh;
 	string diachi;
 };
-int main() {
-	SinhVien b;
-	b.hoten = "Nguyen Van A";
-	b.tuoi = 20;
-	b.gioitinh = true;
-	b.diachi = "Tay Ninh";
-
-	SinhVien c;
-	c.hoten = "Tran Thi B";
-	c.tuoi = 45;
-	c.gioitinh = true;
-	c.diachi = "Dong Thap";
-
-	//SinhVien ds[50];
-	vector <SinhVien> mang;
-	mang.push_back(b);
-	mang.push_back(c);
-	for (int i = 0; i < mang.size(); i++) {
-		cout << "Sinh Vien " << (i + 1) << endl;
-		cout << "\t + Ho Ten: " << mang[i].hoten << endl;
-		cout << "\t + Tuoi: " << mang[i].tuoi << endl;
-		cout << "\t + Gioi Tinh: " << mang[i].gioitinh << endl;
-		cout << "\t + Dia Chi: " << mang[i].diachi << endl;
-	}
+//int main() {
+//	SinhVien b;
+//	b.hoten = "Nguyen Van A";
+//	b.tuoi = 20;
+//	b.gioitinh = true;
+//	b.diachi = "Tay Ninh";
+//
+//	SinhVien c;
+//	c.hoten = "Tran Thi B";
+//	c.tuoi = 45;
+//	c.gioitinh = true;
+//	c.diachi = "Dong Thap";
+//
+//	//SinhVien ds[50];
+//	vector <SinhVien> mang;
+//	mang.push_back(b);
+//	mang.push_back(c);
+//	for (int i = 0; i < mang.size(); i++) {
+//		cout << "Sinh Vien " << (i + 1) << endl;
+//		cout << "\t + Ho Ten: " << mang[i].hoten << endl;
+//		cout << "\t + Tuoi: " << mang[i].tuoi << endl;
+//		cout << "\t + Gioi Tinh: " << mang[i].gioitinh << endl;
+//		cout << "\t + Dia Chi: " << mang[i].diachi << endl;
+//	}
 
 	/*int a = 5;
 	int* p = &a;
@@ -46,4 +46,4 @@ int main() {
 		cout << diemthi[i] << endl;
 	}*/
 	
-}
+//}
