@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<string>
 using namespace std;
 struct Person {
 	int id;
@@ -19,6 +20,21 @@ void ViewPersonList(vector<Person> p) {
 			cout << "\t+ Address: " << p[i].address << endl;
 		}
 	}
+}
+void AddPerson(vector<Person>& p) {
+	Person a;
+	cout << "+ Id: ";
+	cin >> a.id;
+	cout << "+ Name: ";
+	cin.ignore();
+	getline(cin, a.name);
+	cout << "+ Age: ";
+	cin >> a.age;
+	cout << "+ Address: ";
+	cin.ignore();
+	getline(cin, a.address);
+	p.push_back(a);
+	cout << "Add a person successfully" << endl;
 }
 int main() {
 	vector<Person> list;
@@ -43,6 +59,7 @@ int main() {
 			break;
 		}
 		case 2: {
+			AddPerson(list);
 			break;
 		}
 		case 3: {
