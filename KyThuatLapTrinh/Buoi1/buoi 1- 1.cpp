@@ -36,6 +36,16 @@ void AddPerson(vector<Person>& p) {
 	p.push_back(a);
 	cout << "Add a person successfully" << endl;
 }
+void RemovePerson(vector<Person>& p, int id) {
+	for (auto i = p.begin(); i!= p.end(); i++) {
+		if (i->id == id) {
+			p.erase(i);
+			cout << "Remove a person successfully" << endl;
+			return;
+		}
+	}
+	cout << "Not found person with id: " << id << endl;
+}
 int main() {
 	vector<Person> list;
 	do {
@@ -43,7 +53,7 @@ int main() {
 		cout << "___ HUMAN RESOURCE______" << endl;
 		cout << "1. View person list" << endl;
 		cout << "2. Add a person" << endl;
-		cout << "3. Remove a person" << endl;
+		cout << "3. Remove a person by id" << endl;
 		cout << "4. Find a person" << endl;
 		cout << "5. Exporrt to file" << endl;
 		cout << "6. Import from file" << endl;
@@ -63,6 +73,10 @@ int main() {
 			break;
 		}
 		case 3: {
+			int id;
+			cout << "Input ID to remove: ";
+			cin >> id;
+			RemovePerson(list, id);
 			break;
 		}
 		case 4: {
