@@ -5,7 +5,7 @@ using namespace std;
 struct Author {
 	int id;
 	string name;
-	friend istream& operator>>(istream& in, Author& a) {
+    friend istream& operator>>(istream& in, Author& a) {
 		cout << "Author information: " << endl;
 		cout << "\t+ Id: ";
 		in >> a.id;
@@ -34,6 +34,7 @@ struct Book {
 		cout << "\t+ Name: ";
 		in.ignore();
 		getline(in, b.name);
+		in >> b.author;
 		return in;
 	}
 };
