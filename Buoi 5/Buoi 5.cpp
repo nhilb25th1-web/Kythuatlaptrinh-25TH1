@@ -20,14 +20,14 @@ struct Book {
 	int id;
 	string name;
 	Author author;
-	friend ostream& operator<<(ostream& os, Book& b) {
+	friend ostream& operator << (ostream& os, Book& b) {
 		os << "Book information:" << endl;
 		os << "\t+ Id: " << b.id << endl;
 		os << "\t+ Name: " << b.name << endl;
 		os << "\t+ Author name: " << b.author.name << endl;
 		return os;
 	}
-	friend istream& operator>>(istream& in, Book& b) {
+	friend istream& operator >> (istream& in, Book& b) {
 		cout << "Book information:" << endl;
 		cout << "\t+ Id: ";
 		cin >> b.id;
@@ -87,6 +87,22 @@ struct LinkedList {
 		}
 		return false;
 	}
+	bool Update(int updateId) {
+		if (head == NULL) {
+			cout << "No book available" << endl;
+			return false;
+		}
+		Node* item = head;
+
+		while (item != NULL) {
+			if (item->data.id == updateId) {
+				cin >> item->data;
+				return true;
+			}
+			item = item->next;
+		}
+		return false;
+	}
 };
 
 
@@ -134,6 +150,14 @@ int main()
 			break;
 		}
 		case 4: {
+			int updateId;
+			cout << "Enter book's id to update: ";
+			cin >> updateId;
+			bool res = books.Update(updateId);
+			if (res)
+				cout << "Update book successfuly" << endl;
+			else
+				cout << "Invalid book id" << endl;
 			break;
 		}
 		case 5: {
@@ -148,11 +172,16 @@ int main()
 		case 0: {
 			return 0;
 		}
-		default:{
+		default: {
 			cout << "Invalid choice, try again" << endl;
 			break;
 		}
-	    }
+		}
+		system("pause");
+		cout << "Press any key to continue...";
+
+
+
     } while (true);
 }
 
