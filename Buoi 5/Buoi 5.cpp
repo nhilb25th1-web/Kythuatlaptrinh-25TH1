@@ -3,8 +3,8 @@
 using namespace std;
 
 struct Author {
-    int id;
-    string name;
+	int id;
+	string name;
 	friend istream& operator>>(istream& in, Author& a) {
 		cout << "Author information: " << endl;
 		cout << "\t+ Id: ";
@@ -17,9 +17,9 @@ struct Author {
 };
 
 struct Book {
-    int id;
-    string name;
-    Author author;
+	int id;
+	string name;
+	Author author;
 	friend ostream& operator<<(ostream& os, Book& b) {
 		os << "Book information:" << endl;
 		os << "\t+ Id: " << b.id << endl;
@@ -39,8 +39,8 @@ struct Book {
 };
 
 struct Node {
-    Book data;
-    Node* next;
+	Book data;
+	Node* next;
 	void Create(Book b) {
 		data = b;
 		next = nullptr;
@@ -64,6 +64,28 @@ struct LinkedList {
 	void AddFirst(Node* p) {
 		p->next = head;
 		head = p;
+	}
+	bool Remove(int removeId) {
+		if (head == NULL) {
+			cout << "No book available" << endl;
+			return true;
+		}
+		Node* item = head;
+		if (item->data.id == removeId) { //Xoa dau danh sach
+			head = item->next;
+			delete item;
+			return true;
+		}
+		while (item->next != NULL) {
+			if (item->next->data.id == removeId) {
+				Node* temp = item->next;
+				item->next = item->next->next;
+				delete temp;
+				return true;
+			}
+			item = item->next;
+		}
+		return false;
 	}
 };
 
@@ -101,6 +123,14 @@ int main()
 			break;
 		}
 		case 3: {
+			int removeId;
+			cout << "Enter book's id to remove: ";
+			cin >> removeId;
+			bool res = books.Remove(removeId);
+			if (res)
+				cout << "Remove book successfully" << endl;
+			else
+				cout << "Invalid book id" << endl;
 			break;
 		}
 		case 4: {
