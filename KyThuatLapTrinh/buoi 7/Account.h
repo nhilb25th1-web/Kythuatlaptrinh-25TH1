@@ -12,4 +12,16 @@ struct Account {
 		os << "\t+ Description: " << b.desc << endl;
 		return os;
 	}
+	friend istream& operator >> (istream& in, Account& b) {
+		cout << "Account information:" << endl;
+		cout << "\t+ Link: ";
+		in.ignore();
+		getline(in, b.lnk);
+		cin >> b.lnk;
+		cout << "\t+ User name: ";
+		in.ignore();
+		getline(in, b.name);
+		in >> b.author;
+		return in;
+	}
 };

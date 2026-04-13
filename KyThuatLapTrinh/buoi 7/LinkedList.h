@@ -8,6 +8,7 @@ template <typename T>
 struct LinkedList {
 	Node<T>* head;
 	void Show();
+	voi Add(T item);
 };
 
 template <typename T>

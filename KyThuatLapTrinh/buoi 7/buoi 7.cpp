@@ -24,15 +24,13 @@ int main()
 		switch (choice)
 		{
 		case 1: {
-			account.Show();
+			accounts.Show();
 			break;
 		}
 		case 2: {
-			/*Book b;
-			cin >> b;
-			Node* newNode = new Node;
-			newNode->Create(b);
-			books.AddFirst(newNode);*/
+			Accounts a;
+			cin >> a;
+			accounts.Add(a);
 			break;
 		}
 		case 3: {
