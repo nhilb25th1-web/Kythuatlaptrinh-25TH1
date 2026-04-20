@@ -56,17 +56,11 @@ int main()
 			break;
 		}
 		case 5: {
-			/*string bookName;
-			cout << "Enter book's name to find: ";
+			string userName;
+			cout << "Enter account name: ";
 			cin.ignore();
-			getline(cin, bookName);
-			Book* res = books.Find(bookName);
-			if (res != NULL) {
-				cout << *res;
-			}
-			else {
-				cout << "No book with name: " << bookName << endl;
-			}*/
+			getline(cin, userName);
+			accounts.Find(userName);
 			break;
 		}
 		case 6: {
