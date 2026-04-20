@@ -28,31 +28,31 @@ int main()
 			break;
 		}
 		case 2: {
-			Accounts a;
+			Account a;
 			cin >> a;
 			accounts.Add(a);
 			break;
 		}
 		case 3: {
-			/*int removeId;
-			cout << "Enter book's id to remove: ";
+			int removeId;
+			cout << "Enter account Id to remove: ";
 			cin >> removeId;
-			bool res = books.Remove(removeId);
+			bool res = accounts.Remove(removeId);
 			if (res)
-				cout << "Remove book successfully" << endl;
+				cout << " Remove account with id: " << removeId << endl;
 			else
-				cout << "Invalid book id" << endl;*/
+				cout << "Not found acccount id: " << removeId << endl;
 			break;
 		}
 		case 4: {
-			/*int updateId;
-			cout << "Enter book's id to update: ";
+			int updateId;
+			cout << "Enter account Id to update: ";
 			cin >> updateId;
-			bool res = books.Update(updateId);
+			bool res = accounts.Update(updateId);
 			if (res)
-				cout << "Update book successfuly" << endl;
+				cout << " Update account with id: " << updateId << endl;
 			else
-				cout << "Invalid book id" << endl;*/
+				cout << "Not found acccount id: " << updateId << endl;
 			break;
 		}
 		case 5: {
@@ -80,15 +80,15 @@ int main()
 			break;
 		}
 		case 0: {
-			r/*eturn 0;
+			return 0;
 		}
 		default: {
-			cout << "Invalid choice, try again" << endl;*/
+			cout << "Invalid choice, try again" << endl;
 			break;
 		}
-		/*}
+		}
 		system("pause");
-		cout << "Press any key to continue...";*/
+		cout << "Press any key to continue...";
 
 
 
