@@ -1,4 +1,4 @@
-#include<fstream>
+#include <fstream>
 template <typename T>
 struct Node {
 	T data;
@@ -39,8 +39,14 @@ void LinkedList<T>::Import(string fileName) {
 		cout << "Error opening file for reading" << endl;
 		return;
 	}
+	Node<T>* item = head;
+	while (item != NULL) {
+		Node<T>* temp = item;
+		item = item->next;
+		delete temp;
+	}
 	T item;
-	while (inFile.read(reinterpret_cast<char*>(&item), sizeof(T)) {
+	while(inFile.read(reinterpret_cast<char*>(&item), sizeof(T))) {
 		Add(item);
 	}
 	inFile.close();
