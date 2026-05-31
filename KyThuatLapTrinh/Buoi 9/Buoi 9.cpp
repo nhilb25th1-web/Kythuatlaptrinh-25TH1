@@ -41,19 +41,35 @@ void Show() {
 		cout << books[i];
 	}
 }
-void Find
-	void Sort() {
-		for (int i = 0; i < nBook - 1; i++) {
-			for (int j = i + 1; j < nBook; j++) {
-				if (books[i].price > books[i].price) {
-					Book temp = books[i];
-					books[i] = books[j];
-					books[j] = temp;
-				}
+void Sort() {
+	for (int i = 0; i < nBook - 1; i++) {
+		for (int j = i + 1; j < nBook; j++) {
+			if (books[i].price > books[i].price) {
+				Book temp = books[i];
+				books[i] = books[j];
+				books[j] = temp;
 			}
 		}
-    }
-
+	}
+}    
+void Find(int bookId) {
+	int left = 0;
+	int right = nBook - 1;
+	while (left <= right) {
+		int mid = left + (right - left) / 2;
+		if (books[mid].id == bookId) {
+			cout << books[mid];
+			return;
+		}
+		if (books[mid].id > bookId) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
+		}
+	}
+	cout << "Unavailable books" << endl;
+}
 int main()
 {
 	bool sorted = false;
@@ -74,7 +90,6 @@ int main()
 			Book b;
 			cin >> b;
 			AddBook(b);
-			sorted = false;
 			break;
 		}
 		case 2: {
@@ -83,20 +98,13 @@ int main()
 		}
 		case 3: {
 			Sort();
-			sorted = true;
 			break;
 		}
 		case 4: {
-			if (!sorted)
-			{
-				cout << "Books aren't sorted" << endl;
-			}
-			else {
 				int bookId;
 				cout << "Book ID to find: ";
 				cin >> bookId;
 				Find(bookId);
-			}
 			break;
 		}
 		case 0: 
